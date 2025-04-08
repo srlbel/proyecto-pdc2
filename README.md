@@ -21,3 +21,19 @@ Un gimnasio local desde el inicio del año actual aumentó el volumen de persona
 - Ayudar a los afiliados a llevar sus rutinas
 
 #  Explicación del código
+El código del proyecto se encuentra bajo la ruta [gym](./src/local/gym), dentro de esta se encuentran los paquetes `application`, `views`, `models`, y `controllers`, esto siguiendo con la arquitectura MVC para el manejo de los datos.
+
+## Application
+Dentro del paquete `application` se encuentra el punto de entrada de la aplicación donde se hace el llamado de la primera interfaz gráfica.
+
+## Views
+Dentro del paquete `views` se encuentran las definiciones de las clases de las interfaces gráficas que cargan los datos de los controladores.
+
+## Models
+Dentro del paquete `models` se encuentran las definiciones de las clases con los constructores de cada tipo de dato necesario para la aplicación.
+
+## Controllers
+Dentro del paquete `controllers` se encuentran las definiciones de las clases con las operaciones de `CREATE`, `READ`, `UPDATE` y `DELETE` de cada modelo.
+
+# Diagrama de clases
+ToDo
