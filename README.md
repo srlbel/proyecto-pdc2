@@ -36,4 +36,4 @@ Dentro del paquete [models](src/local/gym/models) se encuentran las definiciones
 Dentro del paquete [controllers](src/local/gym/controllers) se encuentran las definiciones de las clases con las operaciones de `CREATE`, `READ`, `UPDATE` y `DELETE` de cada modelo.
 
 # Diagrama de clases
-ToDo
+![Diagrama de clases](./imgs/Clases.png)
