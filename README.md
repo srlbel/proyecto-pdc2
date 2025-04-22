@@ -1,5 +1,5 @@
 # ToDo
-- [ ] Diagrama de clases
+- [x] Diagrama de clases
 - [ ] Funcionalidades
   - [ ] Tabla de visualización de inventario
   - [ ] Control de suscripciones de afiliados
@@ -36,4 +36,8 @@ Dentro del paquete [models](src/local/gym/models) se encuentran las definiciones
 Dentro del paquete [controllers](src/local/gym/controllers) se encuentran las definiciones de las clases con las operaciones de `CREATE`, `READ`, `UPDATE` y `DELETE` de cada modelo.
 
 # Diagrama de clases
+> [!NOTE]  
+> - A contratista le falta un campo llamado: `pago: double`
+> - Falta la relación de `Turno` con `Contratista`
+
 ![Diagrama de clases](./imgs/Clases.png)
