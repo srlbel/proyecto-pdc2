@@ -60,4 +60,8 @@ public class Cliente extends Persona {
     public void setHaPagado(boolean haPagado) {
         this.haPagado = haPagado;
     }
+
+    public void agregarRutina(Rutina rutina) {
+        rutinas.add(rutina);
+    }
 }

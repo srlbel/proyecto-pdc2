@@ -1,11 +1,11 @@
 # ToDo
 - [x] Diagrama de clases
 - [ ] Funcionalidades
-  - [ ] Tabla de visualización de inventario
+  - [ ] Tabla de visualización de inventario*
   - [ ] Control de suscripciones de afiliados
   - [ ] Control de horarios de los empleados
   - [ ] Programación de mantenimientos y limpiezas
-  - [ ] Seguimiento de rutinas
+  - [ ] Seguimiento de rutinas*
 - [ ] Interfaz gráfica
 
 # Idea
@@ -38,6 +38,7 @@ Dentro del paquete [controllers](src/local/gym/controllers) se encuentran las de
 # Diagrama de clases
 > [!NOTE]  
 > - A contratista le falta un campo llamado: `pago: double`
-> - Falta la relación de `Turno` con `Contratista`
+> - Falta la relación de `Turno` con `Contratista`A
+> - Cada clase requiere un Id a excepción de `Persona` e `Inventario`
 
 ![Diagrama de clases](./imgs/Clases.png)

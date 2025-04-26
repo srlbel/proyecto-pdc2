@@ -1,6 +1,12 @@
 package controllers;
 
-public class UserController {
+import models.Persona;
 
-    public UserController() {}
+public class UserController<Persona> implements IController<Persona> {
+    private List<Persona> personas;
+
+    public List<Persona> getPersonas() {
+        return personas;
+    }
+
 }
