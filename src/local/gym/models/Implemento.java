@@ -46,4 +46,12 @@ public class Implemento {
         this.cantidad = cantidad;
     }
 
+    public void mostrarDatos() {
+        System.out.println("Informacion de Implementos:");
+        System.out.println("ID: " + id);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Ubicación: " + ubicacion);
+        System.out.println("Cantidad: " + cantidad);
+    }
+
 }
