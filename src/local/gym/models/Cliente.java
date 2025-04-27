@@ -1,5 +1,8 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import models.Persona;
 
 public class Cliente extends Persona {
@@ -7,23 +10,25 @@ public class Cliente extends Persona {
     private double mensualidad;
     private int diaRenovacion;
     private boolean haPagado;
-
-    // TODO: Agregar campos
-    // private List<Rutina> rutinas;
+    private List<Rutina> rutinas;
 
     public Cliente(
+        int id,
         String nombre,
         String telefono,
         String cedula,
         String email,
         double mensualidad,
         int diaRenovacion,
-        boolean haPagado
+        boolean haPagado,
+        List<Rutina> rutinas
+
     ) {
-        super(nombre, telefono, cedula, email);
+        super(id, nombre, telefono, cedula, email);
         this.mensualidad = mensualidad;
         this.diaRenovacion = diaRenovacion;
         this.haPagado = haPagado;
+        this.rutinas = rutinas != null ? rutinas : new ArrayList<>();
     }
 
     public double getMensualidad() {
@@ -52,5 +57,9 @@ public class Cliente extends Persona {
 
     public void agregarRutina(Rutina rutina) {
         rutinas.add(rutina);
+    }
+
+    public List<Rutina> geRutinas() {
+        return this.rutinas;
     }
 }

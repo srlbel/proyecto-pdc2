@@ -10,6 +10,7 @@ public class Entrenador extends Persona {
     private Turno turno = Turno.MANANA;
 
     public Entrenador(
+        int id,
         String nombre,
         String telefono,
         String cedula,
@@ -17,7 +18,7 @@ public class Entrenador extends Persona {
         double salario,
         Turno turno
     ) {
-        super(nombre, telefono, cedula, email);
+        super(id, nombre, telefono, cedula, email);
         this.salario = salario;
         this.turno = turno;
     }
