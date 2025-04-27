@@ -7,42 +7,47 @@ public class Maquina {
     private String ubicacion;
     private boolean enMantenimiento;
 
-    public Maquina(int id, String nombre, String ubicacion, boolean enMantenimiento){
+    public Maquina(
+        int id,
+        String nombre,
+        String ubicacion,
+        boolean enMantenimiento
+    ) {
         this.id = id;
         this.nombre = nombre;
         this.ubicacion = ubicacion;
         this.enMantenimiento = enMantenimiento;
     }
 
-    public int getId(){
+    public int getId() {
         return this.id;
     }
 
-    public void setId(int id){
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getNombre(){
+    public String getNombre() {
         return this.nombre;
     }
 
-    public void setNombre(String nombre){
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getUbicacion(){
+    public String getUbicacion() {
         return this.ubicacion;
     }
 
-    public void setUbicacion(String ubicacion){
+    public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
 
-    public boolean getEnMantenimiento(){
+    public boolean getEnMantenimiento() {
         return this.enMantenimiento;
     }
-    
-    public void setEnMantenimiento(boolean enMantenimiento){
+
+    public void setEnMantenimiento(boolean enMantenimiento) {
         this.enMantenimiento = enMantenimiento;
     }
 
@@ -50,7 +55,9 @@ public class Maquina {
         System.out.println("ID: " + id);
         System.out.println("Nombre: " + nombre);
         System.out.println("Ubicación: " + ubicacion);
-        System.out.println("Esta en mantenimiento?:" + (enMantenimiento ? "Sí" : "No"));
+        System.out.println(
+            "Esta en mantenimiento?:" + (enMantenimiento ? "Sí" : "No")
+        );
+        System.out.println("---");
     }
-
 }

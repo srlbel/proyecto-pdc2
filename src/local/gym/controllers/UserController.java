@@ -8,6 +8,10 @@ public class UserController implements IController<Persona> {
 
     private List<Persona> personas = new ArrayList<>();
 
+    public UserController(List<Persona> personas) {
+        this.personas = personas;
+    }
+
     @Override
     public List<Persona> getAll() {
         return personas;
