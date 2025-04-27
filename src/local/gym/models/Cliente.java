@@ -4,7 +4,6 @@ import models.Persona;
 
 public class Cliente extends Persona {
 
-    private int idCliente;
     private double mensualidad;
     private int diaRenovacion;
     private boolean haPagado;
@@ -17,24 +16,14 @@ public class Cliente extends Persona {
         String telefono,
         String cedula,
         String email,
-        int idCliente,
         double mensualidad,
         int diaRenovacion,
         boolean haPagado
     ) {
         super(nombre, telefono, cedula, email);
-        this.idCliente = idCliente;
         this.mensualidad = mensualidad;
         this.diaRenovacion = diaRenovacion;
         this.haPagado = haPagado;
-    }
-
-    public int getIdCliente() {
-        return this.idCliente;
-    }
-
-    public void setIdClient(int idCliente) {
-        this.idCliente = idCliente;
     }
 
     public double getMensualidad() {

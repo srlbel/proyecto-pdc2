@@ -5,7 +5,6 @@ import models.Turno;
 
 public class Entrenador extends Persona {
 
-    private int idEntrenador;
     private double salario;
     // se agrega por defecto el turno de la mañana
     private Turno turno = Turno.MANANA;
@@ -15,22 +14,12 @@ public class Entrenador extends Persona {
         String telefono,
         String cedula,
         String email,
-        int idEntrenador,
         double salario,
         Turno turno
     ) {
         super(nombre, telefono, cedula, email);
-        this.idEntrenador = idEntrenador;
         this.salario = salario;
         this.turno = turno;
-    }
-
-    public int getIdEntrenador() {
-        return this.idEntrenador;
-    }
-
-    public void setIdEntrenador(int idEntrenador) {
-        this.idEntrenador = idEntrenador;
     }
 
     public double getSalario() {

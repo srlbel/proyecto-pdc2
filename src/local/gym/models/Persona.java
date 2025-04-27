@@ -2,21 +2,32 @@ package models;
 
 public class Persona {
 
+    private int id;
     private String nombre;
     private String telefono;
     private String cedula;
     private String email;
 
     public Persona(
+        int id,
         String nombre,
         String telefono,
         String cedula,
         String email
     ) {
+        this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
         this.cedula = cedula;
         this.email = email;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
