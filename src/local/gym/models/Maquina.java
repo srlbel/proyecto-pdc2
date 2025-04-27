@@ -34,15 +34,23 @@ public class Maquina {
         return this.ubicacion;
     }
 
-    public void setUbicacion(){
+    public void setUbicacion(String ubicacion){
         this.ubicacion = ubicacion;
     }
 
-    public boolean getenMantenimiento(){
+    public boolean getEnMantenimiento(){
         return this.enMantenimiento;
     }
     
-    public void setenMantenimiento(boolean enMantenimiento){
+    public void setEnMantenimiento(boolean enMantenimiento){
         this.enMantenimiento = enMantenimiento;
     }
+
+    public void mostrarDatos() {
+        System.out.println("ID: " + id);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Ubicación: " + ubicacion);
+        System.out.println("Esta en mantenimiento?:" + (enMantenimiento ? "Sí" : "No"));
+    }
+
 }

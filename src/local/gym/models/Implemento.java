@@ -42,7 +42,7 @@ public class Implemento {
         return this.cantidad;
     }
 
-    public void setCantidad(String cantidad){
+    public void setCantidad(int cantidad){
         this.cantidad = cantidad;
     }
 

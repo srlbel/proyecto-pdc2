@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class MainView extends JFrame {
 
     private ArrayList<Implemento> implementos;
+    private ArrayList<Maquina> maquinas;
 
     public MainView() {
         setTitle("gym");
@@ -25,6 +26,19 @@ public class MainView extends JFrame {
         implemento.mostrarDatos();
       }
 
+      maquinas = new ArrayList<>();
+
+      maquinas.add(new Maquina(201, "Caminadora", "Estacion de cardio", false))
+      maquinas.add(new Maquina(201, "Eliptica", "Estacion de trabajo funcional", false))
+      maquinas.add(new Maquina(201, "Press banco plano", "Estacion de trabajo superior", true))
+      maquinas.add(new Maquina(201, "Maquina de aductores", "Estacion de trabajo inferior", false))
+      maquinas.add(new Maquina(201, "Prensa para pierna", "Estacion de trabajo inferior", true))
+
+      for (Maquina maquina: maquinas){
+        maquina.mostrarDatos();
+      }
+
+  
         setVisible(true);
     }
 }
