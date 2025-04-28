@@ -38,7 +38,8 @@ public class MainView extends JFrame {
 
         System.out.println("--Usuarios--");
         for (Persona p : userController.getAll()) {
-            System.out.println(p.getId() + p.getNombre() + p.getEmail());
+            System.out.printf("%d %s %s%n", p.getId(), p.getNombre(), p.getEmail());
+            System.out.println("----------");
         }
 
         implementos.add(
