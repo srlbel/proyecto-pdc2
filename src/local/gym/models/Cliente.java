@@ -13,15 +13,15 @@ public class Cliente extends Persona {
     private List<Rutina> rutinas;
 
     public Cliente(
-        int id,
-        String nombre,
-        String telefono,
-        String cedula,
-        String email,
-        double mensualidad,
-        int diaRenovacion,
-        boolean haPagado,
-        List<Rutina> rutinas
+            int id,
+            String nombre,
+            String telefono,
+            String cedula,
+            String email,
+            double mensualidad,
+            int diaRenovacion,
+            boolean haPagado,
+            List<Rutina> rutinas
 
     ) {
         super(id, nombre, telefono, cedula, email);
@@ -59,7 +59,7 @@ public class Cliente extends Persona {
         rutinas.add(rutina);
     }
 
-    public List<Rutina> geRutinas() {
+    public List<Rutina> getRutinas() {
         return this.rutinas;
     }
 }

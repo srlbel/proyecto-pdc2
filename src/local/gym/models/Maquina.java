@@ -8,11 +8,10 @@ public class Maquina {
     private boolean enMantenimiento;
 
     public Maquina(
-        int id,
-        String nombre,
-        String ubicacion,
-        boolean enMantenimiento
-    ) {
+            int id,
+            String nombre,
+            String ubicacion,
+            boolean enMantenimiento) {
         this.id = id;
         this.nombre = nombre;
         this.ubicacion = ubicacion;
@@ -49,15 +48,5 @@ public class Maquina {
 
     public void setEnMantenimiento(boolean enMantenimiento) {
         this.enMantenimiento = enMantenimiento;
-    }
-
-    public void mostrarDatos() {
-        System.out.println("ID: " + id);
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Ubicación: " + ubicacion);
-        System.out.println(
-            "Esta en mantenimiento?:" + (enMantenimiento ? "Sí" : "No")
-        );
-        System.out.println("---");
     }
 }

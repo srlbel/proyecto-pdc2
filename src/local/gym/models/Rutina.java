@@ -1,4 +1,4 @@
-package local.gym.models;
+package models;
 
 import java.util.ArrayList;
 import java.util.List;

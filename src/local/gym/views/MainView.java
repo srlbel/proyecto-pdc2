@@ -23,55 +23,48 @@ public class MainView extends JFrame {
         implementos = new ArrayList<>();
 
         userController.create(
-            new Persona(101, "Juan", "3001000222", "12345", "correo@correo.com")
-        );
+                new Persona(101, "Juan", "3001000222", "12345", "correo@correo.com"));
 
         userController.create(
-            new Persona(
-                102,
-                "Camilo",
-                "3001000222",
-                "12345",
-                "correo2@correo.com"
-            )
-        );
+                new Persona(
+                        102,
+                        "Camilo",
+                        "3001000222",
+                        "12345",
+                        "correo2@correo.com"));
 
         System.out.println("--Usuarios--");
         for (Persona p : userController.getAll()) {
-            System.out.printf("%d %s %s%n", p.getId(), p.getNombre(), p.getEmail());
+            System.out.printf(
+                    "%d %s %s%n",
+                    p.getId(),
+                    p.getNombre(),
+                    p.getEmail());
             System.out.println("----------");
         }
 
         implementos.add(
-            new Implemento(
-                101,
-                "Colchoneta",
-                "Estacion de trabajo funcional",
-                20
-            )
-        );
+                new Implemento(
+                        101,
+                        "Colchoneta",
+                        "Estacion de trabajo funcional",
+                        20));
         implementos.add(
-            new Implemento(102, "Mancuernas", "Estanteria de mancuernas", 20)
-        );
+                new Implemento(102, "Mancuernas", "Estanteria de mancuernas", 20));
         implementos.add(
-            new Implemento(
-                103,
-                "Barras multifunciones",
-                "Estacion de trabajo funcional",
-                8
-            )
-        );
+                new Implemento(
+                        103,
+                        "Barras multifunciones",
+                        "Estacion de trabajo funcional",
+                        8));
         implementos.add(
-            new Implemento(
-                104,
-                "Banda elastica",
-                "Estacion de trabajo funcional",
-                10
-            )
-        );
+                new Implemento(
+                        104,
+                        "Banda elastica",
+                        "Estacion de trabajo funcional",
+                        10));
         implementos.add(
-            new Implemento(105, "Pelota suiza", "Estacion de cardio", 5)
-        );
+                new Implemento(105, "Pelota suiza", "Estacion de cardio", 5));
 
         for (Implemento implemento : implementos) {
             implemento.mostrarDatos();
@@ -80,35 +73,27 @@ public class MainView extends JFrame {
         maquinas = new ArrayList<>();
 
         maquinas.add(
-            new Maquina(201, "Caminadora", "Estacion de cardio", false)
-        );
+                new Maquina(201, "Caminadora", "Estacion de cardio", false));
         maquinas.add(
-            new Maquina(201, "Eliptica", "Estacion de trabajo funcional", false)
-        );
+                new Maquina(201, "Eliptica", "Estacion de trabajo funcional", false));
         maquinas.add(
-            new Maquina(
-                201,
-                "Press banco plano",
-                "Estacion de trabajo superior",
-                true
-            )
-        );
+                new Maquina(
+                        201,
+                        "Press banco plano",
+                        "Estacion de trabajo superior",
+                        true));
         maquinas.add(
-            new Maquina(
-                201,
-                "Maquina de aductores",
-                "Estacion de trabajo inferior",
-                false
-            )
-        );
+                new Maquina(
+                        201,
+                        "Maquina de aductores",
+                        "Estacion de trabajo inferior",
+                        false));
         maquinas.add(
-            new Maquina(
-                201,
-                "Prensa para pierna",
-                "Estacion de trabajo inferior",
-                true
-            )
-        );
+                new Maquina(
+                        201,
+                        "Prensa para pierna",
+                        "Estacion de trabajo inferior",
+                        true));
 
         for (Maquina maquina : maquinas) {
             maquina.mostrarDatos();

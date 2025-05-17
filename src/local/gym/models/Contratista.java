@@ -29,4 +29,7 @@ public class Contratista extends Persona {
         this.turnoAtencion = turnoAtencion;
     }
 
+    public void asignarMaquina(Maquina maquina) {
+        maquinasAsignadas.add(maquina);
+    }
 }

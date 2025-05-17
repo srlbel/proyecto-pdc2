@@ -1,8 +1,8 @@
 package controllers;
 
-import local.gym.models.Inventario;
-import local.gym.models.Maquina;
-import local.gym.models.Implemento;
+import models.Inventario;
+import models.Maquina;
+import models.Implemento;
 
 public class InventarioController {
     private Inventario inventario;

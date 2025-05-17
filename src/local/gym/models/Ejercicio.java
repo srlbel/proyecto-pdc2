@@ -46,11 +46,4 @@ public class Ejercicio {
     public void setSeries(int series) {
         this.series = series;
     }
-
-    // Método para mostrar información del ejercicio
-    @Override
-    public String toString() {
-        return "Ejercicio: " + nombre + ", " + descripcion + ", " +
-               repeticiones + " repeticiones x " + series + " series.";
-    }
 }
