@@ -1,9 +1,5 @@
 package models;
 
-import models.Persona;
-import models.Turno;
-import models.Cliente;
-
 public class Entrenador extends Persona {
 
     private double salario;

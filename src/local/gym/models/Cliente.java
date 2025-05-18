@@ -3,8 +3,6 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.Persona;
-
 public class Cliente extends Persona {
 
     private double mensualidad;
