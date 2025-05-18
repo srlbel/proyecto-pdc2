@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Inventario {
-    private ArrayList<Maquina> maquinas;
-    private ArrayList<Implemento> implementos;
+    private List<Maquina> maquinas;
+    private List<Implemento> implementos;
 
     public Inventario() {
         this.maquinas = new ArrayList<>();

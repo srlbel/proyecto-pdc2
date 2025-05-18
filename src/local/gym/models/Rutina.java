@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Rutina {
+    private int id;
     private String nombreRutina;
     private List<Ejercicio> ejercicios;
 
     // Constructor
-    public Rutina(String nombreRutina) {
+    public Rutina(int id, String nombreRutina) {
+        this.id = id;
         this.nombreRutina = nombreRutina;
         this.ejercicios = new ArrayList<>();
     }
@@ -27,18 +29,19 @@ public class Rutina {
         this.nombreRutina = nombreRutina;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setEjercicios(List<Ejercicio> ejercicios) {
+        this.ejercicios = ejercicios;
+    }
+
     public List<Ejercicio> getEjercicios() {
         return ejercicios;
     }
 
-    // Método para mostrar la rutina completa
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Rutina: ").append(nombreRutina).append("\n");
-        for (Ejercicio ejercicio : ejercicios) {
-            sb.append("- ").append(ejercicio.toString()).append("\n");
-        }
-        return sb.toString();
+    public int getId() {
+        return id;
     }
 }
