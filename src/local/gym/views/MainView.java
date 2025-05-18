@@ -2,6 +2,20 @@ package views;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import controllers.EjercicioController;
+import controllers.ImplementoController;
+import controllers.MaquinaController;
+import controllers.RutinaController;
+import controllers.UserController;
+import models.Ejercicio;
+import models.Implemento;
+import models.Inventario;
+import models.Maquina;
+import models.Persona;
+import models.Rutina;
 
 public class MainView extends JFrame {
         private JPanel cardPanel;
@@ -15,9 +29,29 @@ public class MainView extends JFrame {
         private static final String VISITAS_SCREEN = "Mantenimientos";
         private static final String RUTINAS_SCREEN = "Rutinas";
 
+        private static UserController userController;
+        private static EjercicioController ejercicioController;
+        private static ImplementoController implementoController;
+        private static MaquinaController maquinaController;
+        private static RutinaController rutinaController;
+
         public MainView() {
                 super("Gymnasio La Arepa 'e Huevo");
-
+                
+                List<Persona> personas = new ArrayList<>();
+                List<Ejercicio> ejercicios = new ArrayList<>();
+                List<Implemento> implementos = new ArrayList<>();
+                List<Maquina> maquinas = new ArrayList<>();
+                List<Rutina> rutinas = new ArrayList<>();
+                
+                Inventario invetarioImplementos = new Inventario();
+                
+                userController = new UserController(personas);
+                ejercicioController = new EjercicioController(ejercicios);
+                implementoController = new ImplementoController(inventarioImplementos);
+                maquinaController = new MaquinaController(inventarioImplementos);
+                rutinaController = new RutinaController(rutinas);
+                
                 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 setSize(800, 600);
                 setLocationRelativeTo(null);
@@ -28,7 +62,7 @@ public class MainView extends JFrame {
 
                 PrimaryPanel primaryPanel = new PrimaryPanel(this);
                 InventarioPanel inventarioPanel = new InventarioPanel(this);
-                UsuariosPanel usuariosPanel = new UsuariosPanel(this);
+                UsuariosPanel usuariosPanel = new UsuariosPanel(this, userController);
                 EmpleadosPanel empleadosPanel = new EmpleadosPanel(this);
                 MantenimientosPanel mantenimientosPanel = new MantenimientosPanel(this);
                 RutinasPanel rutinasPanel = new RutinasPanel(this);

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Inventario {
+
     private List<Maquina> maquinas;
     private List<Implemento> implementos;
 
