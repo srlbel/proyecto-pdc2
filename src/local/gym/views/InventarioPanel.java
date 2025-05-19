@@ -1,5 +1,6 @@
 package views;
 
+import models.Inventario;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,7 +10,7 @@ public class InventarioPanel extends JPanel {
 
     private MainView mainView;
 
-    public InventarioPanel(MainView mainApp) {
+    public InventarioPanel(MainView mainApp, Inventario inventario) {
         this.mainView = mainApp;
 
         setLayout(new BorderLayout());
