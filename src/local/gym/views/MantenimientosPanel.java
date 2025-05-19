@@ -19,12 +19,17 @@ public class MantenimientosPanel extends JPanel {
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         add(titleLabel, BorderLayout.NORTH);
 
-        JPanel buttoPanel = new JPanel(new GridLayout(3, 1, 10, 10));
-        buttoPanel.setBorder(BorderFactory.createEmptyBorder(20, 50, 20, 50));
+        JPanel buttonPanel = new JPanel(new GridLayout(3, 1, 10, 10));
+        add(buttonPanel, BorderLayout.CENTER);
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(20, 50, 20, 50));
 
         JButton verButton = new JButton("Ver mantenimientos");
         JButton nuevoButton = new JButton("Nuevo Mantenimiento");
         JButton backButton = new JButton("Volver al menu principal");
+
+        buttonPanel.add(verButton);
+        buttonPanel.add(nuevoButton);
+        buttonPanel.add(backButton);
 
         verButton.addActionListener(new ActionListener() {
             @Override
@@ -54,7 +59,6 @@ public class MantenimientosPanel extends JPanel {
             }
         });
 
-        add(titleLabel, BorderLayout.NORTH);
         add(backButton, BorderLayout.SOUTH);
     }
 }
