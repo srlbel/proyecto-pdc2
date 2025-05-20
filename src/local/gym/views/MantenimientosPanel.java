@@ -44,12 +44,17 @@ public class MantenimientosPanel extends JPanel {
         nuevoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+            String descripcion = JOptionPane.showInputDialog("Ingrese la descripción del mantenimiento:");
+            String fecha = JOptionPane.showInputDialog("Ingrese la fecha (YYYY-MM-DD):");
+
+            if (descripcion != null && fecha != null) {
             JOptionPane.showMessageDialog(
-            MantenimientosPanel.this,
-            "Formulario para crear un nuevo mantenimiento.",
-            "Nuevo Mantenimiento",
-            JOptionPane.INFORMATION_MESSAGE);
-            }
+                MantenimientosPanel.this,
+                "Mantenimiento creado:\nDescripción: " + descripcion + "\nFecha: " + fecha,
+                "Registro exitoso",
+                JOptionPane.INFORMATION_MESSAGE
+            );
+            }}
         });
 
         backButton.addActionListener(new ActionListener() {
