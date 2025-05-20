@@ -1,13 +1,19 @@
 package models;
 
+import java.util.Optional;
+
 public class Ejercicio {
+    private int id;
     private String nombre;
     private String descripcion;
     private int repeticiones;
     private int series;
+    private Optional<Maquina> maquina;
+    private Optional<Implemento> implemento;
 
     // Constructor
-    public Ejercicio(String nombre, String descripcion, int repeticiones, int series) {
+    public Ejercicio(int id, String nombre, String descripcion, int repeticiones, int series) {
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.repeticiones = repeticiones;
@@ -19,12 +25,36 @@ public class Ejercicio {
         return nombre;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setMaquina(Optional<Maquina> maquina) {
+        this.maquina = maquina;
+    }
+
+    public void setImplemento(Optional<Implemento> implemento) {
+        this.implemento = implemento;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public Optional<Maquina> getMaquina() {
+        return maquina;
+    }
+
+    public Optional<Implemento> getImplemento() {
+        return implemento;
     }
 
     public void setDescripcion(String descripcion) {
@@ -45,12 +75,5 @@ public class Ejercicio {
 
     public void setSeries(int series) {
         this.series = series;
-    }
-
-    // Método para mostrar información del ejercicio
-    @Override
-    public String toString() {
-        return "Ejercicio: " + nombre + ", " + descripcion + ", " +
-               repeticiones + " repeticiones x " + series + " series.";
     }
 }

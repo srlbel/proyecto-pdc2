@@ -7,42 +7,46 @@ public class Maquina {
     private String ubicacion;
     private boolean enMantenimiento;
 
-    public Maquina(int id, String nombre, String ubicacion, boolean enMantenimiento){
+    public Maquina(
+            int id,
+            String nombre,
+            String ubicacion,
+            boolean enMantenimiento) {
         this.id = id;
         this.nombre = nombre;
         this.ubicacion = ubicacion;
         this.enMantenimiento = enMantenimiento;
     }
 
-    public int getId(){
+    public int getId() {
         return this.id;
     }
 
-    public void setId(int id){
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getNombre(){
+    public String getNombre() {
         return this.nombre;
     }
 
-    public void setNombre(String nombre){
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getUbicacion(){
+    public String getUbicacion() {
         return this.ubicacion;
     }
 
-    public void setUbicacion(){
+    public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
 
-    public boolean getenMantenimiento(){
+    public boolean getEnMantenimiento() {
         return this.enMantenimiento;
     }
-    
-    public void setenMantenimiento(boolean enMantenimiento){
+
+    public void setEnMantenimiento(boolean enMantenimiento) {
         this.enMantenimiento = enMantenimiento;
     }
 }
