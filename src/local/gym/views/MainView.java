@@ -1,44 +1,89 @@
 package views;
 
-import javax.swing.JFrame;
-import models.Implemento;
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
+
+import controllers.EjercicioController;
+import controllers.EmpleadoController;
+import controllers.ImplementoController;
+import controllers.MaquinaController;
+import controllers.RutinaController;
+import controllers.UserController;
+import models.Ejercicio;
+import models.Entrenador;
+import models.Implemento;
+import models.Inventario;
+import models.Maquina;
+import models.Persona;
+import models.Rutina;
 
 public class MainView extends JFrame {
+        private JPanel cardPanel;
+        private CardLayout cardLayout;
 
-    private ArrayList<Implemento> implementos;
-    private ArrayList<Maquina> maquinas;
+        // Constantes para crear las cartas
+        private static final String PRIMARY_SCREEN = "Primary";
+        private static final String INVENTARIO_SCREEEN = "Inventario";
+        private static final String USUARIOS_SCREEN = "Usuarios";
+        private static final String EMPLEADOS_SCREEN = "Empleados";
+        private static final String VISITAS_SCREEN = "Mantenimientos";
+        private static final String RUTINAS_SCREEN = "Rutinas";
 
-    public MainView() {
-        setTitle("gym");
-        setSize(400, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        private static UserController userController;
+        private static EmpleadoController empleadoController;
+        private static EjercicioController ejercicioController;
+        private static ImplementoController implementoController;
+        private static MaquinaController maquinaController;
+        private static RutinaController rutinaController;
 
-        implementos = new ArrayList<>();
+        public MainView() {
+                super("Gymnasio La Arepa 'e Huevo");
 
-        implementos.add(new Implemento(101, "Colchoneta", "Estacion de trabajo funcional", 20));
-        implementos.add(new Implemento(102, "Mancuernas", "Estanteria de mancuernas", 20));
-        implementos.add(new Implemento(103, "Barras multifunciones", "Estacion de trabajo funcional", 8));
-        implementos.add(new Implemento(104, "Banda elastica", "Estacion de trabajo funcional", 10));
-        implementos.add(new Implemento(105, "Pelota suiza", "Estacion de cardio", 5));
+                List<Persona> personas = new ArrayList<>();
+                List<Ejercicio> ejercicios = new ArrayList<>();
+                List<Implemento> implementos = new ArrayList<>();
+                List<Maquina> maquinas = new ArrayList<>();
+                List<Rutina> rutinas = new ArrayList<>();
 
-      for (Implemento implemento: implementos){
-        implemento.mostrarDatos();
-      }
+                Inventario inventarioImplementos = new Inventario();
 
-      maquinas = new ArrayList<>();
+                userController = new UserController(personas);
+                empleadoController = new EmpleadoController(personas);
+                ejercicioController = new EjercicioController(ejercicios);
+                implementoController = new ImplementoController(inventarioImplementos);
+                maquinaController = new MaquinaController(inventarioImplementos);
+                rutinaController = new RutinaController(rutinas);
 
-      maquinas.add(new Maquina(201, "Caminadora", "Estacion de cardio", false))
-      maquinas.add(new Maquina(201, "Eliptica", "Estacion de trabajo funcional", false))
-      maquinas.add(new Maquina(201, "Press banco plano", "Estacion de trabajo superior", true))
-      maquinas.add(new Maquina(201, "Maquina de aductores", "Estacion de trabajo inferior", false))
-      maquinas.add(new Maquina(201, "Prensa para pierna", "Estacion de trabajo inferior", true))
+                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                setSize(800, 600);
+                setLocationRelativeTo(null);
 
-      for (Maquina maquina: maquinas){
-        maquina.mostrarDatos();
-      }
+                cardPanel = new JPanel();
+                cardLayout = new CardLayout();
+                cardPanel.setLayout(cardLayout);
 
-  
-        setVisible(true);
-    }
+                PrimaryPanel primaryPanel = new PrimaryPanel(this);
+                InventarioPanel inventarioPanel = new InventarioPanel(this, inventarioImplementos);
+                UsuariosPanel usuariosPanel = new UsuariosPanel(this, userController);
+                EmpleadosPanel empleadosPanel = new EmpleadosPanel(this, empleadoController);
+                MantenimientosPanel mantenimientosPanel = new MantenimientosPanel(this);
+                RutinasPanel rutinasPanel = new RutinasPanel(this);
+
+                cardPanel.add(primaryPanel, PRIMARY_SCREEN);
+                cardPanel.add(inventarioPanel, INVENTARIO_SCREEEN);
+                cardPanel.add(usuariosPanel, USUARIOS_SCREEN);
+                cardPanel.add(empleadosPanel, EMPLEADOS_SCREEN);
+                cardPanel.add(mantenimientosPanel, VISITAS_SCREEN);
+                cardPanel.add(rutinasPanel, RUTINAS_SCREEN);
+
+                getContentPane().add(cardPanel);
+
+                showScreen(PRIMARY_SCREEN);
+        }
+
+        public void showScreen(String screenName) {
+                cardLayout.show(cardPanel, screenName);
+        }
 }

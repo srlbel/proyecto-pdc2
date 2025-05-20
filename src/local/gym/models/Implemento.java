@@ -14,44 +14,35 @@ public class Implemento {
         this.cantidad = cantidad;
     }
 
-    public int getId(){
+    public int getId() {
         return this.id;
     }
 
-    public void setId(int id){
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getNombre(){
+    public String getNombre() {
         return this.nombre;
     }
 
-    public void setNombre(String nombre){
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getUbicacion(){
+    public String getUbicacion() {
         return this.ubicacion;
     }
 
-    public void setUbicacion(String ubicacion){
+    public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
 
-    public int getCantidad(){
+    public int getCantidad() {
         return this.cantidad;
     }
 
-    public void setCantidad(int cantidad){
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-
-    public void mostrarDatos() {
-        System.out.println("Informacion de Implementos:");
-        System.out.println("ID: " + id);
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Ubicación: " + ubicacion);
-        System.out.println("Cantidad: " + cantidad);
-    }
-
 }

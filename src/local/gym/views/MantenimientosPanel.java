@@ -64,6 +64,7 @@ public class MantenimientosPanel extends JPanel {
             }
         });
 
+        add(titleLabel, BorderLayout.NORTH);
         add(backButton, BorderLayout.SOUTH);
     }
 }
