@@ -68,8 +68,8 @@ public class MainView extends JFrame {
                 InventarioPanel inventarioPanel = new InventarioPanel(this, inventarioImplementos);
                 UsuariosPanel usuariosPanel = new UsuariosPanel(this, userController);
                 EmpleadosPanel empleadosPanel = new EmpleadosPanel(this, empleadoController);
-                MantenimientosPanel mantenimientosPanel = new MantenimientosPanel(this);
-                RutinasPanel rutinasPanel = new RutinasPanel(this);
+                MantenimientosPanel mantenimientosPanel = new MantenimientosPanel(this, maquinaController);
+                RutinasPanel rutinasPanel = new RutinasPanel(this, rutinaController, userController);
 
                 cardPanel.add(primaryPanel, PRIMARY_SCREEN);
                 cardPanel.add(inventarioPanel, INVENTARIO_SCREEEN);

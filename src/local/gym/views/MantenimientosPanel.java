@@ -1,6 +1,9 @@
 package views;
 
 import javax.swing.*;
+
+import controllers.MaquinaController;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,9 +11,11 @@ import java.awt.event.ActionListener;
 public class MantenimientosPanel extends JPanel {
 
     private MainView mainView;
+    private MaquinaController maquinaController;
 
-    public MantenimientosPanel(MainView mainView) {
+    public MantenimientosPanel(MainView mainView, MaquinaController maquinaController) {
         this.mainView = mainView;
+        this.maquinaController = maquinaController;
 
         setLayout(new BorderLayout());
 
@@ -34,27 +39,26 @@ public class MantenimientosPanel extends JPanel {
         verButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(
-            MantenimientosPanel.this,
-            "Los mantenimientos registrados se veran aqui",
-            JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(
+                        MantenimientosPanel.this,
+                        "Los mantenimientos registrados se veran aqui");
             }
         });
 
         nuevoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            String descripcion = JOptionPane.showInputDialog("Ingrese la descripción del mantenimiento:");
-            String fecha = JOptionPane.showInputDialog("Ingrese la fecha (YYYY-MM-DD):");
+                String descripcion = JOptionPane.showInputDialog("Ingrese la descripción del mantenimiento:");
+                String fecha = JOptionPane.showInputDialog("Ingrese la fecha (YYYY-MM-DD):");
 
-            if (descripcion != null && fecha != null) {
-            JOptionPane.showMessageDialog(
-                MantenimientosPanel.this,
-                "Mantenimiento creado:\nDescripción: " + descripcion + "\nFecha: " + fecha,
-                "Registro exitoso",
-                JOptionPane.INFORMATION_MESSAGE
-            );
-            }}
+                if (descripcion != null && fecha != null) {
+                    JOptionPane.showMessageDialog(
+                            MantenimientosPanel.this,
+                            "Mantenimiento creado:\nDescripción: " + descripcion + "\nFecha: " + fecha,
+                            "Registro exitoso",
+                            JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
         });
 
         backButton.addActionListener(new ActionListener() {
