@@ -9,8 +9,10 @@ import java.awt.event.ActionListener;
 public class InventarioPanel extends JPanel {
 
     private MainView mainView;
+    private Inventario inventario;
 
     public InventarioPanel(MainView mainApp, Inventario inventario) {
+        this.inventario = inventario;
         this.mainView = mainApp;
 
         setLayout(new BorderLayout());

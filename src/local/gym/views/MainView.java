@@ -43,8 +43,6 @@ public class MainView extends JFrame {
 
                 List<Persona> personas = new ArrayList<>();
                 List<Ejercicio> ejercicios = new ArrayList<>();
-                List<Implemento> implementos = new ArrayList<>();
-                List<Maquina> maquinas = new ArrayList<>();
                 List<Rutina> rutinas = new ArrayList<>();
 
                 Inventario inventarioImplementos = new Inventario();

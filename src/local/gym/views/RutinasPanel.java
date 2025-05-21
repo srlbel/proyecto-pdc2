@@ -17,15 +17,14 @@ import java.util.List;
 public class RutinasPanel extends JPanel { // Declaracion de campos
 
     private MainView mainView; // para navegar entre pantallas
+    private RutinaController rutinaService;
+    private UserController usuarioService;
 
     private JTable rutinaTable; // tabla para mostrar rutnias
 
     private JComboBox<Cliente> usuarioComboBox; // menu para selecionar usuarios
 
     private JButton asignarButton; // boton para asignar la rutina
-
-    private RutinaController rutinaService;
-    private UserController usuarioService;
 
     // constructor y layout
     public RutinasPanel(MainView mainView, RutinaController rutinaController, UserController userController) {
