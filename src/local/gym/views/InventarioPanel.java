@@ -7,12 +7,15 @@ import models.Implemento;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class InventarioPanel extends JPanel {
 
     private Inventario inventario;
+    private MainView mainView;
 
     private DefaultListModel<Maquina> maquinasModel;
     private JList<Maquina> maquinasList;
@@ -28,9 +31,12 @@ public class InventarioPanel extends JPanel {
     private JTextField implementoNombreField;
     private JTextField implementoCantidadField;
 
-    public InventarioPanel(JFrame parent, Inventario inventario) {
+    public InventarioPanel(MainView mainView, Inventario inventario) {
+	this.mainView = mainView;
         this.inventario = inventario;
         setLayout(new BorderLayout());
+
+        JButton backButton = new JButton("Volver al Menú Principal");
 
         // Panel para máquinas
         JPanel maquinasPanel = new JPanel(new BorderLayout());
@@ -80,12 +86,21 @@ public class InventarioPanel extends JPanel {
         implementosInputPanel.add(new JLabel()); // espacio vacío
         implementosInputPanel.add(agregarImplementoBtn);
 
+	backButton.addActionListener(
+	    new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+        	mainView.showScreen("Primary");
+                    }
+                });
+
         implementosPanel.add(implementosInputPanel, BorderLayout.SOUTH);
 
         // Agregar ambos paneles en el InventarioPanel
         JPanel listasPanel = new JPanel(new GridLayout(1, 2, 10, 10));
         listasPanel.add(maquinasPanel);
         listasPanel.add(implementosPanel);
+	listasPanel.add(backButton);
 
         add(listasPanel, BorderLayout.CENTER);
 
