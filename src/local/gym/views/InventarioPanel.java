@@ -7,10 +7,8 @@ import models.Implemento;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.awt.event.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class InventarioPanel extends JPanel {
 
@@ -119,23 +117,20 @@ public class InventarioPanel extends JPanel {
             return;
         }
 
-        // Validar fecha
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         sdf.setLenient(false);
-        Date fechaMantenimiento;
         try {
-            fechaMantenimiento = sdf.parse(fechaStr);
+            sdf.parse(fechaStr); // validar formato de fecha
         } catch (ParseException ex) {
             JOptionPane.showMessageDialog(this, "Fecha inválida. Use formato dd/MM/yyyy.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        // Crear máquina con constructor disponible
-        Maquina maquina = new Maquina(0, nombre, "No especificada", false);
+        // Concatenamos fecha al nombre para que se muestre
+        Maquina maquina = new Maquina(0, nombre + " (Mantenimiento: " + fechaStr + ")", "No especificada", false);
         inventario.agregarMaquina(maquina);
         maquinasModel.addElement(maquina);
 
-        // Limpiar campos
         maquinaNombreField.setText("");
         maquinaFechaField.setText("");
     }
@@ -158,11 +153,11 @@ public class InventarioPanel extends JPanel {
             return;
         }
 
-        Implemento implemento = new Implemento(0, nombre, "No especificada", cantidad);
+        // Concatenamos cantidad al nombre para que se muestre
+        Implemento implemento = new Implemento(0, nombre + " (Cantidad: " + cantidad + ")", "No especificada", cantidad);
         inventario.agregarImplemento(implemento);
         implementosModel.addElement(implemento);
 
-        // Limpiar campos
         implementoNombreField.setText("");
         implementoCantidadField.setText("");
     }
