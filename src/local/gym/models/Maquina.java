@@ -1,5 +1,7 @@
 package models;
 
+import java.text.SimpleDateFormat;
+
 public class Maquina {
 
     private int id;
@@ -48,5 +50,10 @@ public class Maquina {
 
     public void setEnMantenimiento(boolean enMantenimiento) {
         this.enMantenimiento = enMantenimiento;
+    }
+
+    @Override
+    public String toString() {
+        return this.nombre + "( M: " + this.enMantenimiento + " )";
     }
 }

@@ -45,4 +45,9 @@ public class Implemento {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+    @Override
+    public String toString() {
+        return this.nombre + "( U: " + this.ubicacion + " )";
+    }
 }
